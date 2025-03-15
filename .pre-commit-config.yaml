@@ -1,0 +1,23 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.0
+    hooks:
+    -   id: nbqa-black
+        additional_dependencies: [black==22.10.0]
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.12.0  # Use the latest version tag
+    hooks:
+    -   id: isort
+        name: isort (sort imports)
+        language_version: python3
+        args: ["--profile", "black"]
